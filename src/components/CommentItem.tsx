@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Avatar, Button } from 'antd';
+import { CommentType } from '../types';
 
-const CommentListWrapper = styled.ul`
-  margin: 0;
-  padding: 0;
-`;
 const CommentListRow = styled.li`
   position: relative;
   padding: 5% 3% 3% 3%;
@@ -39,11 +36,15 @@ const Datetime = styled.span`
 `;
 
 const Comment = styled.div`
+  width: 65%;
   font-size: 16px;
 `;
 
 const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: flex-end;
   margin-left: auto;
+  width: 30%;
   & button {
     font-size: 12px;
   }
@@ -51,18 +52,25 @@ const ButtonGroup = styled.div`
     margin-left: 5px;
   }
 `;
-const CommentItem = () => {
+
+const CommentItem = ({
+  id,
+  author,
+  profile_url,
+  content,
+  createdAt,
+}: CommentType) => {
   return (
     <CommentListRow>
       <CommentItemRow>
         <Writer>
-          <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-          <strong>아무개</strong>
+          <Avatar src={profile_url} />
+          <strong>{author}</strong>
         </Writer>
-        <Datetime>2020-09-14</Datetime>
+        <Datetime>{createdAt}</Datetime>
       </CommentItemRow>
       <CommentItemRow>
-        <Comment>취업하고 싶어요!</Comment>
+        <Comment>{content}</Comment>
         <ButtonGroup>
           <Button size="middle">수정</Button>
           <Button size="middle" danger>

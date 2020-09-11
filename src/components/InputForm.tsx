@@ -39,7 +39,7 @@ const InputForm = () => {
           </label>
           <Input id="createDate" placeholder="작성일" />
         </div>
-        <Button type="primary">등록</Button>
+        <Button>등록</Button>
       </Form>
     </Container>
   );
