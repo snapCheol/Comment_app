@@ -142,10 +142,12 @@
     },
     {
       "id": 21,
-      "profile_url": "https://picsum.photos/id/21/50/50",
       "author": "abc_21",
-      "content": "typescript도 배워 보려고 합니다. 어떻게 배우는게 빠를까요",
-      "createdAt": "2020-05-21"
+      "content": [
+        "typescript도 배워 보려고 합니다. 어떻게 배우는게 빠를까요222"
+      ],
+      "createdAt": "2020-05-21",
+      "profile_url": "https://picsum.photos/id/21/50/50"
     },
     {
       "id": 22,

@@ -11,7 +11,7 @@ import {
 const PageListContainer = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector(
-    (state: RootState) => state.comment.comments
+    (state: RootState) => state.comment.allComments
   );
   const { currentPage } = useSelector((state: RootState) => state.comment);
 
@@ -24,8 +24,8 @@ const PageListContainer = () => {
 
   useEffect(() => {
     dispatch(fetchCommentList());
-    dispatch(fetchListPerPage(5));
-  }, [dispatch]);
+    dispatch(fetchListPerPage(currentPage));
+  }, [dispatch, currentPage]);
 
   return (
     <PageList

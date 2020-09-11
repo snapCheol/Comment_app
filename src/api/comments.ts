@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CommentType } from '../types';
+import { CommentResType } from '../types';
 
 export const getComments = (_page = 1) => {
   return axios.get(`http://localhost:4000/comments`, {
@@ -18,10 +18,10 @@ export const getComment = (id: number) => {
 
 export const getAllComments = () => axios.get(`http://localhost:4000/comments`);
 
-export const addComment = (data: CommentType) =>
+export const addComment = (data: CommentResType) =>
   axios.post(`http://localhost:4000/comments`, data);
 
-export const updateComment = (data: CommentType) =>
+export const updateComment = (data: CommentResType) =>
   axios.put(`http://localhost:4000/comments/${data.id}`, data);
 
 export const removeComment = (id: number) =>

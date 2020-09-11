@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Avatar, Button } from 'antd';
-import { CommentType } from '../types';
+import { CommentResType } from '../types';
 
 const CommentListRow = styled.li`
   position: relative;
@@ -53,13 +53,20 @@ const ButtonGroup = styled.div`
   }
 `;
 
+interface CommentItemType extends CommentResType {
+  onDelete: (id: number) => void;
+  onEdit: (id: number) => void;
+}
+
 const CommentItem = ({
   id,
   author,
   profile_url,
   content,
   createdAt,
-}: CommentType) => {
+  onDelete,
+  onEdit,
+}: CommentItemType) => {
   return (
     <CommentListRow>
       <CommentItemRow>
@@ -72,8 +79,10 @@ const CommentItem = ({
       <CommentItemRow>
         <Comment>{content}</Comment>
         <ButtonGroup>
-          <Button size="middle">수정</Button>
-          <Button size="middle" danger>
+          <Button size="middle" onClick={() => onEdit(id)}>
+            수정
+          </Button>
+          <Button size="middle" danger onClick={() => onDelete(id)}>
             삭제
           </Button>
         </ButtonGroup>
