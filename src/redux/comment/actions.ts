@@ -20,6 +20,8 @@ export const FETCH_LIST_PER_PAGE_REQUEST = '/comment/FETCH_LIST_PER_PAGE_REQUEST
 export const FETCH_LIST_PER_PAGE_SUCCESS = '/comment/FETCH_LIST_PER_PAGE_SUCCESS' as const;
 export const FETCH_LIST_PER_PAGE_FAILURE = '/comment/FETCH_LIST_PER_PAGE_FAILURE' as const;
 
+export const SET_CURRENT_PAGE = '/comment/SET_CURRENT_PAGE' as const;
+
 export const fetchCommentList = () => ({
   type: FETCH_COMMENT_LIST_REQUEST,
 });
@@ -36,4 +38,14 @@ export const editComment = () => ({
 export const removeComment = (id: number) => ({
   type: REMOVE_COMMENT_REQUEST,
   payload: id,
+});
+
+export const fetchListPerPage = (_page: number) => ({
+  type: FETCH_LIST_PER_PAGE_REQUEST,
+  payload: _page,
+});
+
+export const setCurrentPage = (_page: number) => ({
+  type: SET_CURRENT_PAGE,
+  payload: _page,
 });

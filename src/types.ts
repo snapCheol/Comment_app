@@ -13,8 +13,16 @@ export type AsyncState = {
 };
 
 export type CommentState = {
-  comments: AsyncState;
-  comment: AsyncState;
+  comments: {
+    loading: boolean;
+    data: CommentType[] | null;
+    error: Error | null;
+  };
+  comment: {
+    loading: boolean;
+    data: CommentType[] | null;
+    error: Error | null;
+  };
   method: 'post' | 'put';
   currentPage: number;
 };

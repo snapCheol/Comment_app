@@ -1,15 +1,16 @@
 import React from 'react';
 import { GlobalStyle } from './styles/GlobalStyles';
 import CommentListContainer from './containers/CommentListContainer';
-import PageList from './components/PageList';
+
 import InputFormContainer from './containers/InputFormContainer';
+import PageListContainer from './containers/PageListContainer';
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <CommentListContainer />
-      <PageList />
+      <PageListContainer />
       <InputFormContainer />
     </>
   );
