@@ -23,6 +23,16 @@ json-server API를 활용하여 댓글 기능을 Typescript와 Redux-saga를 사
 $ npx json-server ./data.json --port 4000
 ```
 
+**프로젝트 의존성 모듈 설치**
+
+```console
+$ yarn install
+
+    or
+
+$ npm install
+```
+
 **프로젝트 실행**
 
 ```console
